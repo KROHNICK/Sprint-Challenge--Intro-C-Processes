@@ -7,6 +7,7 @@
 int main(int argc, char **argv)
 {
   // Parse command line
+  char *directory = argv[1] ? argv[1] : ".";
 
   // Open directory
 
