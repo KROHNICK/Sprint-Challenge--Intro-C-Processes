@@ -30,6 +30,7 @@ int main(int argc, char **argv)
   }
 
   // Close directory
+  closedir(d);
 
   return 0;
 }
