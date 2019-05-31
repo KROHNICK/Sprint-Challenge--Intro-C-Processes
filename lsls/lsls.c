@@ -13,6 +13,21 @@ int main(int argc, char **argv)
   DIR *d = opendir(directory);
 
   // Repeatly read and print entries
+  struct dirent *entry;
+  while ((entry = readdir(d)) != NULL)
+  {
+    char *name = entry->d_name;
+    char path[strlen(directory) + strlen(name) + 1];
+
+    strcpy(path, directory);
+    strcat(path, "/");
+    strcat(path, name);
+
+    struct stat buf;
+    stat(path, &buf);
+
+    printf("%10ld %s\n", buf.st_size, name);
+  }
 
   // Close directory
 
