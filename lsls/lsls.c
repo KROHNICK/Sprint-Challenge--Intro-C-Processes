@@ -10,6 +10,7 @@ int main(int argc, char **argv)
   char *directory = argv[1] ? argv[1] : ".";
 
   // Open directory
+  DIR *d = opendir(directory);
 
   // Repeatly read and print entries
 
